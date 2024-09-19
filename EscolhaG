@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+
+int main(){
+    
+    int caixaEletrônico; //Declaração da variavel.
+    
+    cout << "Escolha um número entre 1 e 3 para a operação desejada :" << endl; // Perguntando ao usúario a operação desejada.
+    cin >> caixaEletrônico;
+    
+    
+    
+    switch (caixaEletrônico) { // Escolha da operação desejada do usúario.
+        
+        case 1: "1";
+        cout << "Saque";
+        break;
+        
+        case 2:"2";
+        cout << "Depósito";
+        break;
+        
+        case 3: "3";
+        cout << "Consulta de Saldo";
+    }
+}
