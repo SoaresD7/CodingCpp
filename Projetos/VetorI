@@ -1,0 +1,62 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+const int NUM_MESAS = 30;
+const int LUGARES_POR_MESA = 5;
+const int CODIGO_INICIO = 100;
+const int CODIGO_FIM = 129;
+
+int main() {
+    
+    vector<int> mesas(NUM_MESAS, 0); 
+    int totalLugaresOcupados = 0;
+
+    while (true) {
+        int codigoMesa, lugaresDesejados;
+
+        cout << "Digite o código da mesa (100 a 129) ou 0 para sair: ";
+        cin >> codigoMesa;
+
+        
+        if (codigoMesa == 0) {
+            break;
+        }
+
+        
+        if (codigoMesa < CODIGO_INICIO || codigoMesa > CODIGO_FIM) {
+            cout << "Código de mesa inválido. Tente novamente." << endl;
+            continue;
+        }
+
+        
+        int mesaIndex = codigoMesa - CODIGO_INICIO;
+
+    
+        cout << "Digite a quantidade de lugares desejados (1 a " << LUGARES_POR_MESA << "): ";
+        cin >> lugaresDesejados;
+
+
+        if (lugaresDesejados < 1 || lugaresDesejados > LUGARES_POR_MESA) {
+            cout << "Quantidade de lugares inválida. Tente novamente." << endl;
+            continue;
+        }
+
+        
+        if (mesas[mesaIndex] + lugaresDesejados <= LUGARES_POR_MESA) {
+            mesas[mesaIndex] += lugaresDesejados; 
+            totalLugaresOcupados += lugaresDesejados; 
+            cout << "Reserva realizada com sucesso na mesa " << codigoMesa << "." << endl;
+        } else {
+            cout << "Não há lugares disponíveis suficientes na mesa " << codigoMesa << "." << endl;
+        }
+
+        
+        if (totalLugaresOcupados >= NUM_MESAS * LUGARES_POR_MESA) {
+            cout << "Todos os lugares estão ocupados." << endl;
+            break;
+        }
+    }
+
+    cout << "Fim da Reserva, agradecemos pela preferencia." << endl;
+    return 0;
+}

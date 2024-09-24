@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int numero;
+
+    
+    cout << "Insira um número inteiro positivo: ";
+    cin >> numero;
+
+    
+    if (numero <= 0) {
+        cout << "Por favor, insira um número positivo." << endl;
+        return 1; 
+    }
+
+    cout << "Divisores de " << numero << ":" << endl;
+
+    
+    for (int i = 1; i <= numero; i++) {
+        if (numero % i == 0) {
+            cout << i << " ";
+        }
+    }
+    cout << endl;
+
+    return 0;
+}

@@ -1,0 +1,45 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main() {
+    const int NUM_NUMEROS = 100;
+    vector<double> numeros(NUM_NUMEROS);
+    double soma = 0.0;
+
+    
+    for (int i = 0; i < NUM_NUMEROS; i++) {
+        cout << "Digite o número " << (i + 1) << ": ";
+        cin >> numeros[i];
+        soma += numeros[i]; 
+    }
+
+    
+    double media = soma / NUM_NUMEROS;
+
+    
+    int iguaisA30 = 0;
+    int maioresQueMedia = 0;
+    int iguaisAMedia = 0;
+
+    
+    for (int i = 0; i < NUM_NUMEROS; i++) {
+        if (numeros[i] == 30) {
+            iguaisA30++;
+        }
+        if (numeros[i] > media) {
+            maioresQueMedia++;
+        }
+        if (numeros[i] == media) {
+            iguaisAMedia++;
+        }
+    }
+
+    
+    cout << "Quantidade de números iguais a 30: " << iguaisA30 << endl;
+    cout << "Quantidade de números maiores que a média: " << maioresQueMedia << endl;
+    cout << "Quantidade de números iguais à média: " << iguaisAMedia << endl;
+
+    return 0;
+}

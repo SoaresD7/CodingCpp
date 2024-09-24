@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int numero;
+    int i = 1;
+
+    
+    cout << "Insira um número inteiro positivo: ";
+    cin >> numero;
+
+    
+    if (numero <= 0) {
+        cout << "Por favor, insira um número positivo." << endl;
+        return 1; 
+    }
+
+    cout << "Números ímpares entre 0 e " << numero << ":" << endl;
+
+    while (i < numero) {
+        cout << i << endl;
+        i += 2; 
+    }
+
+    
+}
